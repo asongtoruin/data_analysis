@@ -52,9 +52,21 @@ for injury, data in frames.items():
 
     mid = (fig.subplotpars.right + fig.subplotpars.left) / 2
 
-    plt.suptitle(
-        f'{injury} per Year (including preseason)', weight='bold', x=mid
+    plt.title(
+        f'{injury} per Year (including preseason)', weight='bold', x=mid,
+        fontsize='x-large'
     )
-    plt.title(SOURCE, fontsize='xx-small')
-    plt.savefig(os.path.join(DEST_DIR, f'{injury}.png'), bbox_inches='tight')
+    # plt.title(SOURCE, fontsize='xx-small')
+    plt.text(
+        fig.subplotpars.left, 0, SOURCE,
+        fontsize='xx-small', style='italic', ha='left', va='baseline',
+        alpha=.5,
+        transform=plt.gcf().transFigure
+    )
+
+    plt.subplots_adjust(bottom=0.2)
+    plt.savefig(
+        os.path.join(DEST_DIR, f'{injury.lower().replace(" ", "-")}.png'),
+        bbox_inches='tight'
+    )
     plt.close('all')
