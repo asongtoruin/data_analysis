@@ -16,7 +16,7 @@ class MidasData:
     def __init__(self, csv_file):
         self.data = pd.read_csv(
             csv_file, skiprows=280, parse_dates=['ob_time'],
-            dayfirst=True, skipfooter=1
+            dayfirst=True, skipfooter=1, engine='python'
         )
 
         self.data['Hour'] = self.data['ob_time'].dt.hour
