@@ -14,7 +14,7 @@ plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['font.sans-serif'] = 'Noway Round'
 plt.rcParams['font.weight'] = 'regular'
 
-df = pd.read_csv(cur_dir / 'Tier Seasons.csv')
+df = pd.read_csv(data_dir / 'Tier Seasons.csv')
 
 # Get the outsiders
 outsiders = df[df['Highest Level'].ne(1)]
@@ -57,7 +57,7 @@ ax.set_axis_off()
 
 plt.suptitle('Outsiders', weight='bold', size=80, c=light_blue, y=1.08)
 ax.set_title(
-    'Teams with the most seasons in the English Football League\nwho have never played in the top flight.',
+    'Teams with the most seasons in the English (men\'s) Football\nLeague who have never played in the top flight.',
     c=light_blue, weight='regular', size=25, y=1.02, loc='left'
 )
 
@@ -112,7 +112,7 @@ ax.set_facecolor('#101D42')
 
 plt.suptitle('Nearly Men', weight='bold', size=80, c=light_blue, y=1.09)
 ax.set_title(
-    'Teams with the most seasons in the second tier of English\nfootball who have never played in the top flight.',
+    'Teams with the most seasons in the second tier of English\n(men\'s) football who have never played in the top flight.',
     c=light_blue, weight='regular', size=25, y=1.02, loc='left'
 )
 
